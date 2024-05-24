@@ -1,33 +1,31 @@
-import org.example.PalindromeCheck;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-public class test {
-    @Test
-    public void testSingleCharPalindrome() {
-        String str = "a";
-        assertTrue(PalindromeCheck.isPalindrome(str));
-    }
-
-
+public class PalindromeCheckTest {
 
     @Test
-    public void testEmptyPalindrome() {
-        String str = "";
-        assertTrue(PalindromeCheck.isPalindrome(str));
+    public void testIsPalindrome_madam() {
+        String str = "madam";
+        boolean expectedResult = true;
+        boolean actualResult = PalindromeCheck.isPalindrome(str);
+
+        org.junit.jupiter.api.Assertions.assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void testNonPalindrome() {
+    public void testIsPalindrome_racecar() {
         String str = "apple";
-        assertFalse(PalindromeCheck.isPalindrome(str));
+        boolean expectedResult = false;
+        boolean actualResult = PalindromeCheck.isPalindrome(str);
+
+        org.junit.jupiter.api.Assertions.assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void testCaseSensitivePalindrome() {
-        String str = "Madam";
-        assertTrue(PalindromeCheck.isPalindrome(str));
-    }
+    public void testIsPalindrome_notPalindrome() {
+        String str = "";
+        boolean expectedResult = true;
+        boolean actualResult = PalindromeCheck.isPalindrome(str);
 
+        org.junit.jupiter.api.Assertions.assertEquals(expectedResult, actualResult);
+    }
 }
